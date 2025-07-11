@@ -92,15 +92,16 @@ public class WeatherConsumer {
     }
 
 
+    // Для тестов
     public Map<String, Integer> getRainyDaysCount() {
-        return rainyDaysCount; // Возвращаем реальную карту
+        return rainyDaysCount;
     }
 
     public Map<String, Integer> getMaxTemperatureCity() {
-        return maxTemperatureCity; // Возвращаем реальную карту
+        return maxTemperatureCity;
     }
 
     public Map<String, Integer> getMinTemperatureCity() {
-        return minTemperatureCity; // Возвращаем реальную карту
+        return minTemperatureCity;
     }
 }
