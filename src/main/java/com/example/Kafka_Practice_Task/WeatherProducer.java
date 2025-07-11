@@ -19,8 +19,10 @@ public class WeatherProducer {
     @Scheduled(fixedRate = 2000)
     public void sendWeather() {
         int temperature = random.nextInt(36);
+        final String[] cities = {"Москва", "Питер", "Казань", "Новосибирск"};
         String condition = conditions[random.nextInt(conditions.length)];
-        String message = String.format("{\"temperature\": %d, \"condition\": \"%s\"}", temperature, condition);
+        String city = cities[random.nextInt(cities.length)];
+        String message = String.format("{\"temperature\": %d, \"condition\": \"%s\", \"city\": \"%s\"}", temperature, condition, city);
 
         kafkaTemplate.send("weather-topic", message);
         System.out.println("Отправлено" + message);
